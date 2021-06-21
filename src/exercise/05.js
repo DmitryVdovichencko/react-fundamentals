@@ -17,8 +17,8 @@ const smallBox = <div className='box box--small' style={{backgroundColor:'lightb
 const mediumBox = <div className='box box--medium' style={{backgroundColor:'pink'}}>medium pink box</div>
 const largeBox = <div className='box box--large' style={{backgroundColor:'orange'}}>large orange box</div>
 
-function Box({size, backgroundColor, children}) {
-	const className = `box box--${size}`, style = { fontStyle:'italic', backgroundColor}
+function Box({size='', backgroundColor='', children}) {
+	const className = `box ${size? `box--${size}`:''}`, style = { fontStyle:'italic', backgroundColor}
 	return <div {...{className, style, children}} />
 }
 Box.propTypes = {
